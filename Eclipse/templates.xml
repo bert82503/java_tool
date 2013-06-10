@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><templates><template autoinsert="true" context="javadoc" deleted="false" description="author name" enabled="true" id="org.eclipse.jdt.ui.templates.author" name="@author">@author	Bert Lee</template><template autoinsert="true" context="javadoc" deleted="false" description="&lt;b&gt;&lt;/b&gt;" enabled="true" id="org.eclipse.jdt.ui.templates.b_tag" name="&lt;b&gt;">&lt;b&gt;${word_selection}${}&lt;/b&gt;${cursor}</template><template autoinsert="true" context="javadoc" deleted="false" description="&lt;code&gt;&lt;/code&gt;" enabled="true" id="org.eclipse.jdt.ui.templates.code_tag" name="&lt;code&gt;">&lt;code&gt;${word_selection}${}&lt;/code&gt;${cursor}</template><template autoinsert="true" context="javadoc" deleted="false" description="&lt;font&gt; red &lt;/font&gt;" enabled="true" name="&lt;font&gt;">&lt;font color="red"&gt;&lt;b&gt;${word_selection}${}&lt;/b&gt;&lt;/font&gt;${cursor}</template><template autoinsert="true" context="javadoc" deleted="false" description="&lt;i&gt;&lt;/i&gt;" enabled="true" id="org.eclipse.jdt.ui.templates.i_tag" name="&lt;i&gt;">&lt;i&gt;${word_selection}${}&lt;/i&gt;${cursor}</template><template autoinsert="true" context="javadoc" deleted="false" description="&lt;pre&gt;&lt;/pre&gt;" enabled="true" id="org.eclipse.jdt.ui.templates.pre_tag" name="&lt;pre&gt;">&lt;pre&gt;${word_selection}${}&lt;/pre&gt;${cursor}</template><template autoinsert="true" context="javadoc" deleted="false" description="&lt;tt&gt; &lt;/tt&gt;" enabled="true" name="&lt;tt&gt;">&lt;tt&gt;${word_selection}${}&lt;/tt&gt;${cursor}</template><template autoinsert="true" context="javadoc" deleted="false" description="active task" enabled="true" id="org.eclipse.mylyn.ide.ui.template.activeTask" name="active_task">${activeTaskPrefix}${activeTaskKey}</template><template autoinsert="true" context="java-statements" deleted="false" description="create new array" enabled="true" name="array">${Type}[] ${name} = new ${Type}[${len}];&#13;
+${cursor}</template><template autoinsert="false" context="java-statements" deleted="false" description="add an element to an array" enabled="true" id="org.eclipse.jdt.ui.templates.arrayadd" name="arrayadd">${array_type}[] ${result:newName(array)} = new ${array_type}[${array}.length + 1];
+System.arraycopy(${array}, 0, ${result}, 0, ${array}.length);
+${result}[${array}.length]= ${var};</template><template autoinsert="false" context="java-statements" deleted="false" description="merge two arrays into one" enabled="true" id="org.eclipse.jdt.ui.templates.arraymerge" name="arraymerge">${array_type}[] ${result:newName(array1)} = new ${array_type}[${array1:array}.length + ${array}.length];
+System.arraycopy(${array1}, 0, ${result}, 0, ${array1}.length);
+System.arraycopy(${array}, 0, ${result}, ${array1}.length, ${array}.length);</template><template autoinsert="false" context="java-statements" deleted="false" description="dynamic cast" enabled="true" id="org.eclipse.jdt.ui.templates.cast" name="cast">${type} ${new_name} = (${type}) ${name};</template><template autoinsert="false" context="java" deleted="false" description="catch block" enabled="true" id="org.eclipse.jdt.ui.templates.catch" name="catch">catch (${Exception} ${exception_variable_name}) {
+	${cursor}// ${todo}: handle exception
+}</template><template autoinsert="false" context="java-statements" deleted="false" description="do while statement" enabled="true" id="org.eclipse.jdt.ui.templates.do" name="do">do {
+	${line_selection}${cursor}
+} while (${condition:var(boolean)});</template><template autoinsert="false" context="java-statements" deleted="false" description="else block" enabled="true" id="org.eclipse.jdt.ui.templates.else" name="else">else {
+	${cursor}
+}</template><template autoinsert="false" context="java-statements" deleted="false" description="else if block" enabled="true" id="org.eclipse.jdt.ui.templates.elseif" name="elseif">else if (${condition:var(boolean)}) {
+	${cursor}
+}</template><template autoinsert="true" context="java-members" deleted="false" description="int enum" enabled="true" name="enum">static enum ${Type} {&#13;
+	${NAME}(${value}), &#13;
+	;&#13;
+&#13;
+	public int value() {&#13;
+		return value;&#13;
+	}&#13;
+	&#13;
+	private int value;&#13;
+&#13;
+	${Type}(int value) {&#13;
+		this.value = value;&#13;
+	}&#13;
+}</template><template autoinsert="true" context="java-members" deleted="false" description="string enum" enabled="true" name="enum">static enum ${Type} {&#13;
+	${NAME}(${value}), &#13;
+	;&#13;
+	&#13;
+	@Override&#13;
+	public String toString() {&#13;
+		return value;&#13;
+	}&#13;
+	&#13;
+	private String value;&#13;
+	&#13;
+	${Type}(String value) {&#13;
+		this.value = value;&#13;
+	}&#13;
+}</template><template autoinsert="true" context="java-members" deleted="false" description="override equals()" enabled="true" name="equals">@${:newType(java.lang.Override)}&#13;
+public boolean equals(Object obj) {&#13;
+	// 性能优化：比较操作有可能很昂贵&#13;
+	if (this == obj)&#13;
+		return true;&#13;
+	&#13;
+	if (! (obj instanceof ${enclosing_type}))&#13;
+		return false;&#13;
+	&#13;
+	${enclosing_type} other = (${enclosing_type}) obj;&#13;
+	return ${field} == null ? other.${field} == null : ${field}.equals(other.${field});&#13;
+}</template><template autoinsert="false" context="java" deleted="false" description="$FALL-THROUGH$ marker" enabled="true" id="org.eclipse.jdt.ui.templates.fall-through" name="fall-through">//$$FALL-THROUGH$$</template><template autoinsert="true" context="javadoc" deleted="false" description="&lt;code&gt;false&lt;/code&gt;" enabled="true" id="org.eclipse.jdt.ui.templates.code_tag_false" name="false">&lt;code&gt;false&lt;/code&gt;</template><template autoinsert="true" context="java-members" deleted="false" description="private field" enabled="true" name="field">private ${type} ${name};</template><template autoinsert="true" context="java" deleted="false" description="finally block" enabled="true" name="finally">finally {&#13;
+	${cursor}&#13;
+}</template><template autoinsert="false" context="java-statements" deleted="false" description="iterate over array" enabled="true" id="org.eclipse.jdt.ui.templates.for_array" name="for">for (int ${index} = 0; ${index} &lt; ${array}.length; ${index}++) {
+	${line_selection}${cursor}
+}</template><template autoinsert="false" context="java-statements" deleted="false" description="iterate over array with temporary variable" enabled="true" id="org.eclipse.jdt.ui.templates.for_temp" name="for">for (int ${index} = 0; ${index} &lt; ${array}.length; ${index}++) {
+	${array_type} ${array_element} = ${array}[${index}];
+	${cursor}
+}</template><template autoinsert="false" context="java-statements" deleted="false" description="iterate over collection" enabled="true" id="org.eclipse.jdt.ui.templates.for_collection" name="for">for (${iteratorType:newType(java.util.Iterator)}&lt;${type:elemType(collection)}&gt; ${iterator} = ${collection}.iterator(); ${iterator}.hasNext(); ) {
+	${type} ${name:newName(type)} = ${iterator}.next();
+	${cursor}
+}</template><template autoinsert="false" context="java-statements" deleted="false" description="iterate over an array or Iterable" enabled="true" id="org.eclipse.jdt.ui.templates.for_iterable" name="foreach">for (${iterable_type} ${iterable_element} : ${iterable}) {
+	${cursor}
+}</template><template autoinsert="false" context="java-statements" deleted="false" description="if statement" enabled="true" id="org.eclipse.jdt.ui.templates.if" name="if">if (${condition:var(boolean)}) {
+	${line_selection}${cursor}
+}</template><template autoinsert="false" context="java-statements" deleted="false" description="if else statement" enabled="true" id="org.eclipse.jdt.ui.templates.ifelse" name="ifelse">if (${condition:var(boolean)}) {
+	${cursor}
+} else {
+	
+}</template><template autoinsert="false" context="java-statements" deleted="false" description="dynamic type test and cast" enabled="true" id="org.eclipse.jdt.ui.templates.instanceof" name="instanceof">if (${name:var} instanceof ${type}) {
+	${type} ${new_name} = (${type})${name};
+	${cursor}
+}</template><template autoinsert="false" context="java-statements" deleted="false" description="lazy creation" enabled="true" id="org.eclipse.jdt.ui.templates.lazy" name="lazy">if (${name:var} == null) {
+	${name} = new ${type}(${arguments});
+	${cursor}
+}
+
+return ${name};</template><template autoinsert="true" context="java-statements" deleted="false" description="create new array list" enabled="true" name="list">${list:newType(java.util.List)}&lt;${type:link(String)}&gt; ${name} = new ${array_list:newType(java.util.ArrayList)}&lt;${type}&gt;();&#13;
+${cursor}</template><template autoinsert="false" context="java-members" deleted="false" description="main method" enabled="true" id="org.eclipse.jdt.ui.templates.main" name="main">public static void main(String[] args) {
+	${cursor}
+}</template><template autoinsert="true" context="java-statements" deleted="false" description="create new hash map" enabled="true" name="map">${map:newType(java.util.Map)}&lt;${type:link(String)}&gt; ${name} = new ${hash_map:newType(java.util.HashMap)}&lt;${type}&gt;();&#13;
+${cursor}</template><template autoinsert="false" context="java-members" deleted="false" description="method" enabled="true" id="org.eclipse.jdt.ui.templates.public_method" name="method">${visibility:link(public,protected,private)} ${return_type} ${name}(${}) {
+	${cursor}
+}</template><template autoinsert="false" context="java-statements" deleted="false" description="create new object" enabled="true" id="org.eclipse.jdt.ui.templates.new" name="new">${type} ${name} = new ${type}(${arguments});</template><template autoinsert="false" context="java" deleted="false" description="non-externalized string marker" enabled="true" id="org.eclipse.jdt.ui.templates.non-nls" name="nls">//$$NON-NLS-${N}$$</template><template autoinsert="true" context="javadoc" deleted="false" description="&lt;code&gt;null&lt;/code&gt;" enabled="true" id="org.eclipse.jdt.ui.templates.code_tag_null" name="null">&lt;code&gt;null&lt;/code&gt;</template><template autoinsert="false" context="java" deleted="false" description="runnable" enabled="true" id="org.eclipse.jdt.ui.templates.runnable" name="runnable">new Runnable() {
+	public void run() {
+		${line_selection}
+	}
+}</template><template autoinsert="true" context="java-statements" deleted="false" description="create new hash set" enabled="true" name="set">${set:newType(java.util.Set)}&lt;${type:link(String)}&gt; ${name} = new ${hash_set:newType(java.util.HashSet)}&lt;${type}&gt;();&#13;
+${cursor}</template><template autoinsert="false" context="java-members" deleted="false" description="static final field" enabled="true" id="org.eclipse.jdt.ui.templates.static_final" name="static_final">${visibility:link(public,protected,private)} static final ${type:link(String,int)} ${NAME};</template><template autoinsert="false" context="java-members" deleted="false" description="static method" enabled="true" id="org.eclipse.jdt.ui.templates.private_static_method" name="static_method">${visibility:link(public,protected,private)} static ${return_type} ${name}(${}) {
+	${cursor}
+}</template><template autoinsert="false" context="java-statements" deleted="false" description="switch case statement" enabled="true" id="org.eclipse.jdt.ui.templates.switch" name="switch">switch (${key}) {
+	case ${value}:
+		${cursor}
+		break;
+
+	default:
+		break;
+}</template><template autoinsert="false" context="java-statements" deleted="false" description="synchronized block" enabled="true" id="org.eclipse.jdt.ui.templates.synchronized" name="synchronized">synchronized (${mutex:var}) {
+	${line_selection}
+}</template><template autoinsert="true" context="java-statements" deleted="false" description="print to standard error" enabled="true" id="org.eclipse.jdt.ui.templates.syserr" name="syserr">System.err.println(${word_selection}${});${cursor}</template><template autoinsert="true" context="java-statements" deleted="false" description="print to standard out" enabled="true" id="org.eclipse.jdt.ui.templates.sysout" name="sysout">${:importStatic('java.lang.System.*')}out.println(${word_selection}${});${cursor}</template><template autoinsert="true" context="java-statements" deleted="false" description="print current method to standard out" enabled="true" id="org.eclipse.jdt.ui.templates.systrace" name="systrace">System.out.println("${enclosing_type}.${enclosing_method}()");</template><template autoinsert="false" context="java-members" deleted="false" description="test method (JUnit 4)" enabled="true" id="org.eclipse.jdt.ui.templates.test_junit4" name="test">@${testType:newType(org.junit.Test)}
+public void ${testName}() {
+	${:importStatic('org.junit.Assert.*')}${cursor} 
+}</template><template autoinsert="true" context="java-members" deleted="false" description="test method (TestNG)" enabled="true" name="test">@${testType:newType(org.testng.annotations.Test)}&#13;
+public void ${testName}() {&#13;
+	${:importStatic('org.testng.Assert.*')}${cursor} &#13;
+}</template><template autoinsert="false" context="java" deleted="false" description="convert collection to array" enabled="true" id="org.eclipse.jdt.ui.templates.toarray" name="toarray">${collection}.toArray(new ${type}[${collection}.size()])</template><template autoinsert="true" context="java-members" deleted="false" description="override toString()" enabled="true" name="toString">@Override&#13;
+public String toString() {&#13;
+	StringBuilder sb = new StringBuilder();&#13;
+	sb.append("${enclosing_type} [")&#13;
+	  .append("${field1:field(String)}=").append(${field1:field(String)})&#13;
+	  .append(", ${field2:field(String)}=").append(${field2:field(String)})&#13;
+	  .append(", ${field3:field(String)}=").append(${field3:field(String)})&#13;
+	  .append(']');&#13;
+	return sb.toString();&#13;
+}</template><template autoinsert="true" context="javadoc" deleted="false" description="&lt;code&gt;true&lt;/code&gt;" enabled="true" id="org.eclipse.jdt.ui.templates.code_tag_true" name="true">&lt;code&gt;true&lt;/code&gt;</template><template autoinsert="false" context="java-statements" deleted="false" description="try catch block" enabled="true" id="org.eclipse.jdt.ui.templates.try" name="try">try {
+	${line_selection}${cursor}
+} catch (${Exception} ${exception_variable_name}) {
+	// ${todo}: handle exception
+}</template><template autoinsert="false" context="java-statements" deleted="false" description="iterate with enumeration" enabled="true" id="org.eclipse.jdt.ui.templates.while_enumeration" name="while">while (${en:var(java.util.Enumeration)}.hasMoreElements()) {
+	${type:argType(en)} ${elem:newName(type)} = (${type}) ${en}.nextElement();
+	${cursor}
+}</template><template autoinsert="false" context="java-statements" deleted="false" description="iterate with iterator" enabled="true" id="org.eclipse.jdt.ui.templates.while_iterator" name="while">while (${it:var(java.util.Iterator)}.hasNext()) {
+	${type:argType(it)} ${elem:newName(type)} = (${type}) ${it}.next();
+	${cursor}
+}</template><template autoinsert="false" context="java-statements" deleted="false" description="while loop with condition" enabled="true" id="org.eclipse.jdt.ui.templates.while_condition" name="while">while (${condition:var(boolean)}) {
+	${line_selection}${cursor}
+}</template></templates>
