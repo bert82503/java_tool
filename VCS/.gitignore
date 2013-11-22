@@ -1,0 +1,24 @@
+# TestNG
+test-output/
+
+# other
+output/
+
+# Eclipse
+bin/
+.classpath
+.project
+.settings/
+
+# Maven
+target/
+*.releaseBackup
+deploy/
+
+# Git
+.gitignore
+
+# OSX
+.DS_Store
+.AppleDouble
+.LSOverride
