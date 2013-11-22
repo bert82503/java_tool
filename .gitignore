@@ -1,11 +1,7 @@
 # TestNG
 test-output/
 
-# other
-output/
-
 # Eclipse
-bin/
 .classpath
 .project
 .settings/
@@ -15,10 +11,8 @@ target/
 *.releaseBackup
 deploy/
 
-# Git
-.gitignore
+# Linux
+*~
 
 # OSX
 .DS_Store
-.AppleDouble
-.LSOverride
